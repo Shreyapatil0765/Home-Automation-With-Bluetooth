@@ -12,15 +12,19 @@
 *MENTOR*: NEELA SANTOSH
 
 
+
 Bluetooth Controlled Home Automation System
 ________________________________________
 Introduction
+
 This project demonstrates a Bluetooth Controlled Home Automation System that allows wireless switching of household electrical appliances using a smartphone. The system is designed to be cost-effective, reliable, and user-friendly, and is suitable for short-range domestic automation tasks. It employs an Arduino Uno microcontroller, HC-05 Bluetooth module, relays, transistors, flyback diodes, and manual push buttons. The control interface is created using MIT App Inventor, which allows the user to control appliances through both button clicks and voice commands via Bluetooth communication.
 ________________________________________
 Objective
+
 To design and implement a home automation system that can wirelessly control electrical appliances using a smartphone app developed in MIT App Inventor, supported by manual control for reliability.
 ________________________________________
 Components Used
+
 1.	Arduino Uno: Acts as the central controller that processes Bluetooth input and toggles outputs.
 2.	HC-05 Bluetooth Module: Facilitates wireless communication between the Arduino and the smartphone.
 3.	Relay Module (2 SPDT Relays): Switches AC appliances on or off.
@@ -32,19 +36,23 @@ Components Used
 9.	Power Supply: 5V for Arduino, 12V for relays and DC motor, 230V AC for lamps.
 ________________________________________
 Circuit Explanation
+
 The Arduino Uno receives serial commands via the HC-05 Bluetooth module. Upon receiving a specific character, it outputs a HIGH signal on the corresponding digital pin. This signal is passed through a 1kΩ resistor to the base of a 2N2222 transistor, allowing it to conduct and energize the relay coil.
 When energized, the relay switches its terminal from Normally Closed (NC) to Normally Open (NO), enabling the appliance to operate. Turning off the relay reverts the connection, stopping the appliance.
 Flyback diodes are connected in reverse bias across the relay coils to suppress voltage spikes and protect sensitive components. Manual push buttons are also connected to the Arduino's digital input pins. When pressed, they send a signal to toggle the state of the respective relay, ensuring the system can function even if Bluetooth connectivity fails.
 ________________________________________
 Software and Simulation
+
 1.	MIT App Inventor: Used to design a smartphone app that sends commands to the HC-05 module via Bluetooth. The app supports both button-based and voice-based control.
 2.	Proteus 8 Professional: Used to simulate the entire circuit. External libraries for Arduino Uno and HC-05 were imported. Proteus enabled visualization of relay switching, transistor behavior, and communication flow, validating the system before physical implementation.
 ________________________________________
 Challenges Faced
+
 1.	Relay Triggering Errors: Inconsistent switching due to improper biasing was fixed by adjusting resistor values.
 2.	Back EMF Issues: Relay coil switching caused voltage spikes, damaging components. This was resolved by adding flyback diodes.
 ________________________________________
 Conclusion
+
 This Bluetooth-based home automation project provides a simple, scalable, and effective solution for controlling electrical appliances remotely. The integration of MIT App Inventor for Bluetooth and voice control, along with manual push buttons, ensures versatility and reliability. The system serves as a strong foundation for developing advanced smart home applications with IoT integration.
 
 
